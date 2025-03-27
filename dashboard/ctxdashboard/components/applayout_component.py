@@ -43,7 +43,10 @@ class AppLayoutComponent:
         app_layout = html.Div(
             className="container",
             children=[
-                html.H1(children='CTx Fitness Dashboard', className="page-header"),
+                html.Div([
+                    html.Img(src='/assets/meduni-logo.png'),
+                    html.H1(children='CTx Activity Tracker', className="page-header"),
+                ], className="header-wrapper"),
                 dbc.Row(
                     className="page",
                     children=[

@@ -7,7 +7,7 @@ def create_acceptance_pie_chart(acceptances: List[bool], n_total_patients):
     n_accept = sum(acceptances)
     figure = go.Figure(
         data=go.Pie(
-            labels=["accepted", "not accepted", "filtered/no activity"],
+            labels=["accepted", "not accepted", "filtered or no activity"],
             values=[
                 n_accept,
                 n_patients_after_filters - n_accept,

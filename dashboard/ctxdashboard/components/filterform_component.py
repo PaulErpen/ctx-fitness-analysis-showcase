@@ -149,19 +149,21 @@ class FilterFormComponent:
         body = html.Div(
             className="filter-form",
             children=[
-                html.H3("Acceptance criteria"),
-                min_hours_per_day_display,
-                min_hours_per_day_input,
-                html.Div(
-                    children="Minimum number of days:",
-                    className="field-label"
-                ),
-                min_days_input,
-                html.Div(
-                    children="Minimum number of consecutive days:",
-                    className="field-label"
-                ),
-                min_consecutive_days_input,
+                html.Div([
+                    html.H3("Acceptance criteria"),
+                    min_hours_per_day_display,
+                    min_hours_per_day_input,
+                    html.Div(
+                        children="Minimum number of days:",
+                        className="field-label"
+                    ),
+                    min_days_input,
+                    html.Div(
+                        children="Minimum number of consecutive days:",
+                        className="field-label"
+                    ),
+                    min_consecutive_days_input,
+                ], className="acceptance-criteria-wrapper"),
 
                 html.H3("Patient filters"),
                 html.Div("ECOG", className="field-label"),

@@ -49,10 +49,10 @@ def robust_unique_nan_aggregator(totals: List[dt.timedelta], daily_fractions: Li
         raise Exception(
             f"There is more than one non-nan value present in the series '{series}'. This is unexpected so it leads to an exception!")
     if n_not_na == 0:
-        return np.NAN
+        return np.nan
     for value in series.dropna().values:
         return value
-    return np.NAN
+    return np.nan
 
 
 stress_dict = {
@@ -66,16 +66,16 @@ inverted_stress_dict = {v: k for k, v in stress_dict.items()}
 
 def stress_qualifier_aggregator(totals: List[dt.timedelta], daily_fractions: List[dt.timedelta], series: "pd.Series[Any]") -> Union[str, float]:
     if series.notna().sum() < 1:
-        return np.NAN
+        return np.nan
     if set(set(series.notna().unique())).difference(stress_dict.keys()) == set():
         raise Exception(
             f"The set of stress levels {series} contains an unrecognized stress level! This should not be!")
     nan_helper_df = pd.DataFrame.from_dict({
         "delta_s": pd.Series(daily_fractions).apply(lambda delta: delta.total_seconds()),
-        "parsed_stress_levels": series.apply(lambda x: stress_dict[x] if x is not np.NAN else np.NAN)
+        "parsed_stress_levels": series.apply(lambda x: stress_dict[x] if x is not np.nan else np.nan)
     }).dropna()
     if nan_helper_df.delta_s.sum() == 0:
-        return np.NAN
+        return np.nan
     weighted_average = np.average(
         nan_helper_df.parsed_stress_levels, weights=nan_helper_df.delta_s)
     return inverted_stress_dict[round(weighted_average)]
@@ -91,7 +91,7 @@ def simple_weighted_ordinal_aggregator(totals: List[dt.timedelta], daily_fractio
                      .groupby("nominal_values")
                      .sum())
     if nan_helper_df.empty:
-        return np.NAN
+        return np.nan
     return nan_helper_df.idxmax().iloc[0]
 
 column_aggregation_strategy: Dict[str, Callable[[List[dt.timedelta], List[dt.timedelta], "pd.Series[Any]"], Any]] = {

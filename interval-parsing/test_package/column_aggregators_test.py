@@ -83,7 +83,7 @@ class ColumnAggregatorsTest(unittest.TestCase):
         self.assertEqual(appended, "")
     
     def test_robust_unique_nan_aggregator_normal_case(self):
-        value = robust_unique_nan_aggregator([], [], pd.Series([np.NAN, "Hello"]))
+        value = robust_unique_nan_aggregator([], [], pd.Series([np.nan, "Hello"]))
         self.assertEqual(value, "Hello")
 
     def test_robust_unique_nan_aggregator_all_same(self):
@@ -99,7 +99,7 @@ class ColumnAggregatorsTest(unittest.TestCase):
         self.assertEqual(agg_value, "ONE")
     
     def test_simple_weighted_ordinal_aggregator_all_nans(self):
-        agg_value = simple_weighted_ordinal_aggregator([dt.timedelta(10), dt.timedelta(10)], [dt.timedelta(10), dt.timedelta(10)], pd.Series([np.NAN, np.NAN]))
+        agg_value = simple_weighted_ordinal_aggregator([dt.timedelta(10), dt.timedelta(10)], [dt.timedelta(10), dt.timedelta(10)], pd.Series([np.nan, np.nan]))
         self.assertTrue(np.isnan(agg_value))
     
     def test_stress_qualifier_aggregator_not_in(self):
@@ -113,11 +113,11 @@ class ColumnAggregatorsTest(unittest.TestCase):
         agg_value = stress_qualifier_aggregator(
             [dt.timedelta(1), dt.timedelta(1), dt.timedelta(0), dt.timedelta(500)], 
             [dt.timedelta(1), dt.timedelta(1), dt.timedelta(0), dt.timedelta(500)], 
-            pd.Series(["calm", "calm", np.NAN, "stressful"]))
+            pd.Series(["calm", "calm", np.nan, "stressful"]))
         self.assertEqual(agg_value, "stressful")
 
     def test_stress_qualifier_aggregator_all_nan(self):
-        agg_value = stress_qualifier_aggregator([dt.timedelta(0)],[dt.timedelta(0)], pd.Series([np.NAN]))
+        agg_value = stress_qualifier_aggregator([dt.timedelta(0)],[dt.timedelta(0)], pd.Series([np.nan]))
         self.assertTrue(np.isnan(agg_value))
     
     def test_stress_qualifier_aggregator_single_0(self):

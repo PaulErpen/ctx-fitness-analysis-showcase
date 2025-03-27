@@ -95,7 +95,7 @@ class SeriesDropdownTest(unittest.TestCase):
     def test_given_string_and_multi_and_all_and_nans(self):
         drop_down = get_series_dropdown(
             id="someid",
-            series=pd.Series([1.0, 123.21312, np.NAN]),
+            series=pd.Series([1.0, 123.21312, np.nan]),
             initial_selection=InitialSelection.ALL,
             labeling_strategy=LabelingStrategy.AS_STRING,
             multi=True,

@@ -6,7 +6,6 @@ import pandas as pd
 from ctxfitness.preprocessing_pipeline import ParsedDailiesColumns as pdc
 from ctxfitness.ctx_patient_dailies_handler import CTxPatientDailiesHandler, simple_min_hours_daily_acceptance_criterion, minimum_overall_and_consecutive_days_patient_acceptance_criterion
 import dash_bootstrap_components as dbc
-import dash_auth
 from ctxdashboard.figures.patient_heatmap import render_acceptance_heatmap, render_times_heatmap
 from ctxdashboard.figures.pie_chart import create_acceptance_pie_chart
 from ctxdashboard.filter_patients.filter_patients import filter_patients

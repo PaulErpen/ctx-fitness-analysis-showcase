@@ -1,0 +1,7 @@
+Documents/*.pdf
+**/__pycache__/*
+**/.~lock.*
+**/node_modules/*
+dashboard/scripts/patient_timesheets/event_sheets.zip
+dashboard/scripts/patient_timesheets/*
+**/.DS_Store

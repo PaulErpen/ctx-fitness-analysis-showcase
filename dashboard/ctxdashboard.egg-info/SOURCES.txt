@@ -1,0 +1,8 @@
+setup.py
+ctxdashboard/__init__.py
+ctxdashboard/app.py
+ctxdashboard.egg-info/PKG-INFO
+ctxdashboard.egg-info/SOURCES.txt
+ctxdashboard.egg-info/dependency_links.txt
+ctxdashboard.egg-info/requires.txt
+ctxdashboard.egg-info/top_level.txt

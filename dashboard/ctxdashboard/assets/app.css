@@ -1,0 +1,67 @@
+body {
+  background-color: #cecece;
+  margin: 0;
+}
+body h1.page-header {
+  margin-bottom: 10px;
+  margin-top: 0;
+  padding-top: 10px;
+}
+body .container {
+  background-color: white;
+  min-height: 100vh;
+}
+body .container .page {
+  overflow: auto;
+}
+body .container .page .left .filter-form {
+  padding-bottom: 10px;
+}
+body .container .page .left .filter-form h3 {
+  margin-top: 5px;
+}
+body .container .page .left .filter-form #year-slider {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+body .container .page .left .filter-form .field-label {
+  margin-top: 3px;
+  font-weight: bold;
+}
+body .container .page .left .filter-form input[type=checkbox] {
+  /* margin-right: 5px; */
+  /* margin-top: 11px; */
+  margin: 14px 6px 0 0;
+}
+body .container .page .right .right-inner {
+  overflow: auto;
+  width: 100%;
+}
+body .container .page .right .right-inner .pie-holder .acceptance-pie-figure {
+  height: 30vh;
+  overflow: hidden;
+}
+body .container .page .right .right-inner .pat-heatmap-times-svg,
+body .container .page .right .right-inner .pat-heatmap-acceptance-svg {
+  float: left;
+}
+body .container .page .right .right-inner .pat-heatmap-times-svg .svg-container,
+body .container .page .right .right-inner .pat-heatmap-acceptance-svg .svg-container {
+  height: calc(max(70vh, 980px) - 2.5rem - 50px) !important;
+}
+body .container .page .right .right-inner .pat-heatmap-acceptance-svg {
+  width: 10px;
+}
+body .container .page .right .right-inner .pat-heatmap-times-svg {
+  width: calc(100% - 10px);
+}
+@media (min-width: 1400px) {
+  body .container .page .left {
+    float: left;
+    width: 25%;
+  }
+  body .container .page .right {
+    float: left;
+    width: 75%;
+  }
+}

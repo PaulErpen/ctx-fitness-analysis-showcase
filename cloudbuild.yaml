@@ -1,0 +1,13 @@
+steps:
+# Build the container image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build','-f', 'docker/Dockerfile', '-t', 'gcr.io/ctx-fitness/dashboard', '.']
+# Push the container image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/ctx-fitness/dashboard']
+# Deploy container image to Cloud Run
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args: ['run', 'deploy', 'fitnesstrackerproject', '--image', 'gcr.io/ctx-fitness/dashboard', '--region', 'europe-west1']
+images:
+- gcr.io/ctx-fitness/dashboard

@@ -1,0 +1,88 @@
+body {
+    background-color: #cecece;
+    margin: 0;
+
+    $header-margin-bottom: 10px;
+
+    h1.page-header {
+        margin-bottom: $header-margin-bottom;
+        margin-top: 0;
+        padding-top: $header-margin-bottom;
+    }
+
+    .container {
+        background-color: white;
+        min-height: 100vh;
+
+        .page {
+            overflow: auto;
+
+            .left {
+                .filter-form {
+                    padding-bottom: 10px;
+
+                    h3 {
+                        margin-top: 5px;
+                    }
+                    
+                    #year-slider {
+                        padding-left: 10px !important;
+                        padding-right: 10px !important;
+                    }
+
+                    .field-label {
+                        margin-top: 3px;
+                        font-weight: bold;
+                    }
+
+                    input[type="checkbox"] {
+                        /* margin-right: 5px; */
+                        /* margin-top: 11px; */
+                        margin: 14px 6px 0 0;
+                    }
+                }
+
+            }
+
+            .right .right-inner {
+                $pie-height: 30vh;
+                overflow: auto;
+                width: 100%;
+
+                .pie-holder .acceptance-pie-figure {
+                    height: $pie-height;
+                    overflow: hidden;
+                }
+
+                .pat-heatmap-times-svg,
+                .pat-heatmap-acceptance-svg {
+                    float: left;
+
+                    .svg-container {
+                        $hm-height: max(100vh - $pie-height, 980px);
+                        height: calc(#{$hm-height} - 2.5rem - 50px) !important;
+                    }
+                }
+
+                .pat-heatmap-acceptance-svg {
+                    width: 10px;
+                }
+
+                .pat-heatmap-times-svg {
+                    width: calc(100% - 10px);
+                }
+            }
+
+            @media (min-width: 1400px) {
+                .left {
+                    float: left;
+                    width: 25%;
+                }
+                .right {
+                    float: left;
+                    width: 75%;
+                }
+            }
+        }
+    }
+}

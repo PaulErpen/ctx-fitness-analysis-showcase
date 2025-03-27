@@ -1,0 +1,13 @@
+Metadata-Version: 2.2
+Name: ctxdashboard
+Version: 1.0
+Requires-Dist: matplotlib>=3.6.2
+Requires-Dist: matplotlib-inline>=0.1.6
+Requires-Dist: numpy>=1.23.4
+Requires-Dist: openpyxl>=3.0.10
+Requires-Dist: pandas>=1.5.2
+Requires-Dist: seaborn>=0.12.1
+Requires-Dist: flask
+Requires-Dist: ctxfitness
+Requires-Dist: pyxtension==1.13.16
+Dynamic: requires-dist

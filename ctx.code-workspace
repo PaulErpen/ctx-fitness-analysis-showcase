@@ -1,0 +1,29 @@
+{
+  "folders": [
+    {
+      "path": "dashboard"
+    },
+    {
+      "path": "interval-parsing"
+    },
+    {
+      "path": "SampleData"
+    },
+    {
+      "path": "docker"
+    },
+    {
+      "path": "inital-investigation"
+    },
+    {
+      "path": "patient-cofactors"
+    },
+    {
+      "path": "general-data-analysis"
+    }
+  ],
+  "settings": {
+    "python.pythonPath": "/home/paul/.conda/envs/ctx-fitness/bin/python",
+    "python.analysis.typeCheckingMode": "basic"
+  }
+}

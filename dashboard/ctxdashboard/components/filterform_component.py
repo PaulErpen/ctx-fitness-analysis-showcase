@@ -149,6 +149,20 @@ class FilterFormComponent:
         body = html.Div(
             className="filter-form",
             children=[
+                html.H3("Acceptance criteria"),
+                min_hours_per_day_display,
+                min_hours_per_day_input,
+                html.Div(
+                    children="Minimum number of days:",
+                    className="field-label"
+                ),
+                min_days_input,
+                html.Div(
+                    children="Minimum number of consecutive days:",
+                    className="field-label"
+                ),
+                min_consecutive_days_input,
+
                 html.H3("Patient filters"),
                 html.Div("ECOG", className="field-label"),
                 ecog_multi_select,
@@ -172,20 +186,6 @@ class FilterFormComponent:
                 html.Div("Fitness: HGS", className="field-label"),
                 hgs_range_slider,
                 hgs_nan_checkbox,
-
-                html.H3("Acceptance criteria"),
-                min_hours_per_day_display,
-                min_hours_per_day_input,
-                html.Div(
-                    children="Minimum number of days:",
-                    className="field-label"
-                ),
-                min_days_input,
-                html.Div(
-                    children="Minimum number of consecutive days:",
-                    className="field-label"
-                ),
-                min_consecutive_days_input
             ]
         )
 

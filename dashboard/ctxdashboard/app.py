@@ -93,7 +93,8 @@ def update_output_div(
                                    hgs_include_nans=hgs_nan_checkbox)
 
     patient_dailies_handlers: List[CTxPatientDailiesHandler] = []
-    for user_id in normalized_dailies[pdc.USER_LAST_NAME].unique():
+    total_durations_sorted = normalized_dailies.groupby(pdc.USER_LAST_NAME)[pdc.DAILY_DURATION_S].sum().sort_values(ascending=True)
+    for user_id in total_durations_sorted.index:
         if str(user_id) in filtered_ids:
             sub_frame = normalized_dailies[normalized_dailies[pdc.USER_LAST_NAME] == user_id]
             if sub_frame.shape[0] > 0:

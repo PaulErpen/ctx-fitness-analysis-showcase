@@ -19,14 +19,6 @@ patient_cofactors: pd.DataFrame = pd.read_excel(
     os.path.join(os.path.dirname(__file__), "../data/patient-meta.xlsx"))
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
-if "local" not in os.environ.get("PROFILES", ""):
-    VALID_USERNAME_PASSWORD_PAIRS: Dict[str, str] = {s.split(":")[0]: s.split(
-        ":")[1] for s in os.environ.get("CREDENTIALS", "").split(",")}
-
-    auth = dash_auth.BasicAuth(
-        app,
-        VALID_USERNAME_PASSWORD_PAIRS
-    )
 
 layout = AppLayoutComponent.createComponent(patient_cofactors)
 
